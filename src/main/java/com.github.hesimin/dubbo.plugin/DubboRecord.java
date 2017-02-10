@@ -11,14 +11,14 @@ public class DubboRecord implements Serializable {
     private Long id;
 
     /**
-     * uuid 32+2位
+     * uuid 32+2位（全局id）
      */
-    private String globalRequestId;
+    private String gid;
 
     /**
-     * uuid 32+2位
+     * uuid 32+2位(节点id)
      */
-    private String nodeRequestId;
+    private String nid;
 
     /**
      * 记录者：consumer、provider
@@ -80,20 +80,20 @@ public class DubboRecord implements Serializable {
         this.id = id;
     }
 
-    public String getGlobalRequestId() {
-        return globalRequestId;
+    public String getGid() {
+        return gid;
     }
 
-    public void setGlobalRequestId(String globalRequestId) {
-        this.globalRequestId = globalRequestId == null ? null : globalRequestId.trim();
+    public void setGid(String gid) {
+        this.gid = gid;
     }
 
-    public String getNodeRequestId() {
-        return nodeRequestId;
+    public String getNid() {
+        return nid;
     }
 
-    public void setNodeRequestId(String nodeRequestId) {
-        this.nodeRequestId = nodeRequestId == null ? null : nodeRequestId.trim();
+    public void setNid(String nid) {
+        this.nid = nid;
     }
 
     public String getRecorder() {
@@ -101,7 +101,7 @@ public class DubboRecord implements Serializable {
     }
 
     public void setRecorder(String recorder) {
-        this.recorder = recorder == null ? null : recorder.trim();
+        this.recorder = recorder;
     }
 
     public Integer getRequestDubboCount() {
@@ -125,7 +125,7 @@ public class DubboRecord implements Serializable {
     }
 
     public void setServiceType(String serviceType) {
-        this.serviceType = serviceType == null ? null : serviceType.trim();
+        this.serviceType = serviceType;
     }
 
     public String getMethodName() {
@@ -133,7 +133,7 @@ public class DubboRecord implements Serializable {
     }
 
     public void setMethodName(String methodName) {
-        this.methodName = methodName == null ? null : methodName.trim();
+        this.methodName = methodName;
     }
 
     public String getParameterTypes() {
@@ -141,7 +141,7 @@ public class DubboRecord implements Serializable {
     }
 
     public void setParameterTypes(String parameterTypes) {
-        this.parameterTypes = parameterTypes == null ? null : parameterTypes.trim();
+        this.parameterTypes = parameterTypes;
     }
 
     public Long getStartTime() {
@@ -165,14 +165,14 @@ public class DubboRecord implements Serializable {
     }
 
     public void setParameterValues(String parameterValues) {
-        this.parameterValues = parameterValues == null ? null : parameterValues.trim();
+        this.parameterValues = parameterValues;
     }
 
     public String getEx() {
         return ex;
     }
 
-    public void setEx(String exception) {
-        this.ex = exception == null ? null : exception.trim();
+    public void setEx(String ex) {
+        this.ex = ex;
     }
 }
