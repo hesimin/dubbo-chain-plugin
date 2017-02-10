@@ -26,9 +26,9 @@ public class DubboRecord implements Serializable {
     private String recorder;
 
     /**
-     * 调用dubbo次数统计
+     * 调用次数统计
      */
-    private Integer requestDubboCount;
+    private Integer requestCount;
 
     /**
      * 是否成功
@@ -36,12 +36,7 @@ public class DubboRecord implements Serializable {
     private Integer success;
 
     /**
-     * 接口类型
-     */
-    private String serviceType;
-
-    /**
-     * 方法名字
+     * 方法名字(uri或者rpc方法-含类全名#方法名)
      */
     private String methodName;
 
@@ -104,12 +99,12 @@ public class DubboRecord implements Serializable {
         this.recorder = recorder;
     }
 
-    public Integer getRequestDubboCount() {
-        return requestDubboCount;
+    public Integer getRequestCount() {
+        return requestCount;
     }
 
-    public void setRequestDubboCount(Integer requestDubboCount) {
-        this.requestDubboCount = requestDubboCount;
+    public void setRequestCount(Integer requestCount) {
+        this.requestCount = requestCount;
     }
 
     public Integer getSuccess() {
@@ -118,14 +113,6 @@ public class DubboRecord implements Serializable {
 
     public void setSuccess(Integer success) {
         this.success = success;
-    }
-
-    public String getServiceType() {
-        return serviceType;
-    }
-
-    public void setServiceType(String serviceType) {
-        this.serviceType = serviceType;
     }
 
     public String getMethodName() {
