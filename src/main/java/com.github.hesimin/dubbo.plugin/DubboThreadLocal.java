@@ -35,7 +35,38 @@ public class DubboThreadLocal {
         }
         map.put(key, value);
     }
+    /**
+     * 获取全局请求id
+     *
+     * @return
+     */
+    public static String getGid() {
+        return getString(GLOBAL_REQUEST_ID_KEY);
+    }
 
+    /**
+     * 创建一个新的gid
+     * <p>适合在线程入口处调用，内部会先执行clear再创建</p>
+     *
+     * @return
+     */
+    public static String getNewGid() {
+        clear();
+        String gid = TraceIdGenerator.generate();
+        put(GLOBAL_REQUEST_ID_KEY, gid);
+        put(NODE_REQUEST_ID_KEY, "0");
+        return gid;
+    }
+
+    /**
+     * 节点id
+     * <p>在gid存在的时候，nid应该一定是存在的</p>
+     *
+     * @return
+     */
+    public static String getNid() {
+        return getString(NODE_REQUEST_ID_KEY);
+    }
     public static void clear() {
         threadLocal.remove();
     }

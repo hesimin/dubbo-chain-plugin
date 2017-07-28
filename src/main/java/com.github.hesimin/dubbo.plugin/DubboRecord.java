@@ -11,12 +11,12 @@ public class DubboRecord implements Serializable {
     private Long id;
 
     /**
-     * uuid 32+2位（全局id）
+     * 请求id
      */
     private String gid;
 
     /**
-     * uuid 32+2位(节点id)
+     * 请求节点id
      */
     private String nid;
 
